@@ -22,8 +22,7 @@ function connectWebSocket(){
     }
 
     // 打开一个 web socket
-    websocket = new WebSocket("ws://qkmango.top:80/chat/websocket");
-    // websocket = new WebSocket("ws://localhost:8080/chat/websocket");
+    websocket = new WebSocket("ws://localhost:80/chat/websocket");
     websocket.onopen = function() {
         // Web Socket 已连接上，使用 send() 方法发送数据
         console.log("connectWebSocket.websocket.onopen =>> 已连接");

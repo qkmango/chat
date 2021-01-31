@@ -26,7 +26,6 @@
     <filter-name>LoginFilter</filter-name>
     <filter-class>cn.qkmango.chat.filter.LoginFilter</filter-class>
   </filter>
-
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
     <url-pattern>*.do</url-pattern>
