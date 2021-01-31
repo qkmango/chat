@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>chat</title>
+    <link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/chat.css"/>
+</head>
+<body class="layui-main layui-bg-black">
+<!-- 顶部导航条logo -->
+<nav id="top-nav">
+	<a href="http://qkmango.cn" target="_blank"><img src="imgs/logo_color.png" /></a>
+</nav>
+
+<div id="chat">
+    <div class="layui-inline layui-col-md12 layui-header">
+		<span>Online Chat</span>
+		<span id="loginInfo">
+			<i class="layui-icon">&#xe66f;</i> <span id="loginUser">张嗣龙</span>
+			<button id="logoutBtn" type="button" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger">
+				<i class="layui-icon">&#xe682;</i>退出
+			</button>
+		</span>
+	</div>
+    <div class="layui-inline layui-col-md8 layui-bg-gray" id="chat-left">
+
+        <!-- 消息列表 -->
+        <ul class=" message" id="message">
+<!--            <li class="message-item">-->
+<!--                <div class="message-info">-->
+<!--                    <span class="message-name">张三</span>-->
+<!--                    <span class="message-time">2020-01-30 11:21</span>-->
+<!--                </div>-->
+<!--                <div class="message-msg"><span>你好呀</span></div>-->
+<!--            </li>-->
+<!--            <li class="message-item message-me">-->
+<!--                <div class="message-info">-->
+<!--                    <span class="message-name">张三</span>-->
+<!--                    <span class="message-time">2020-01-30 11:21</span>-->
+<!--                </div>-->
+<!--                <div class="message-msg"><span>你好呀</span></div>-->
+<!--            </li>-->
+        </ul>
+
+        <!-- 消息编辑面板 -->
+        <form class="layui-form layui-form-pane send" action="">
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" id="sendMsgText"></textarea>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn" id="submit">发送消息</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    <div class="layui-inline layui-col-md4 layui-bg-gray onlineinfo">
+		<p>在线情况</p>
+		<div id="onlineinfo-count">0人在线</div>
+		<table class="layui-table" lay-skin="line">
+		  <tbody id="onlineinfo-list">
+<!--		    <tr><td>贤心</td></tr>-->
+<!--		    <tr><td>张爱玲</td></tr>-->
+		  </tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="lib/jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="lib/layui/layui.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/websocket.js"></script>
+<script type="text/javascript" src="js/chat.js"></script>

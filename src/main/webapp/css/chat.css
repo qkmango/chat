@@ -1,0 +1,131 @@
+html,body {
+	height: 100%;
+}
+
+/* 顶部导航条logo */
+#top-nav{
+	position: fixed;
+	left: 5px;
+}
+#top-nav img {
+	height: 30px;
+	margin-top: 10px;
+}
+
+#chat{
+	height: 100%;
+}
+
+#loginInfo {
+	float: right;
+	line-height: 60px;
+}
+
+#loginInfo>*:last-child {
+	margin-left: 20px;
+}
+
+
+#chat>div:first-child>span:first-child {
+	font-size: 30px;
+	line-height: 60px;
+}
+
+#chat>div:not(:first-child) {
+	height: 600px;
+}
+
+
+/* 聊天面板左部分 */
+#chat-left {
+	padding: 10px;
+}
+
+/* 聊天信息面板 message */
+#chat-left .message {
+	height: 450px;
+	overflow: auto;
+}
+
+/* 聊天记录 item */
+#chat-left .message-item {
+	/* border-top: 1px solid #2F4056; */
+	/* border-bottom: 1px solid #2F4056; */
+	box-sizing: border-box;
+	padding: 2px 5px;
+}
+#chat-left .message-item:not(:first-child) {
+	border-top: none;
+}
+
+
+
+/* 消息时间、用户名 */
+#chat-left .message-me>.message-info{
+	text-align: right;
+}
+
+/* 消息时间 */
+#chat-left .message-time {
+	color: #c2c2c2 !important;
+}
+
+/* 消息用户名 */
+#chat-left .message-name{
+	color: #FFB800 !important;
+	font-weight: bold;
+}
+
+/* 我的 消息内容 */ 
+#chat-left .message-me>.message-msg{
+	text-align: right;
+}
+
+/* 消息内容 */
+#chat-left .message-msg {
+	font-size: 18px;
+}
+
+/* 消息内容气泡 */
+#chat-left .message-msg>span {
+	display: inline-block;
+	background-color: #fff;
+	padding: 8px 10px;
+	border-radius: 5px;
+}
+#chat-left .message-me>.message-msg>span {
+	background-color: #5FB878;
+}
+
+
+/* 消息发送区域 */
+#chat-left>.send>div,
+#chat-left>.send>div:last-child>div{
+	margin-left: 0;
+}
+/* 消息发送区域 */
+#chat-left>.send>div:first-child>textarea {
+	resize: none;
+}
+/* 消息发送区域 */
+#submit {
+	float: right;
+}
+
+
+
+/* ======在线情况面板======= */
+.onlineinfo {
+	border-left: 2px solid #c2c2c2;
+	box-sizing: border-box;
+}
+.onlineinfo>p {
+	font-size: 20px;
+	text-align:center;
+	line-height: 35px;
+}
+
+#onlineinfo-count {
+	text-align: center;
+	color: #5FB878;
+}

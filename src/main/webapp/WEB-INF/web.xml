@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <listener>
+    <listener-class>cn.qkmango.chat.chat.web.listener.RequestListener</listener-class>
+  </listener>
+
+  <!-- 乱码过滤器 -->
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>cn.qkmango.chat.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <!--匹配后缀名的，前面不要加开头斜杠-->
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+<!--  是否登陆的过滤器-->
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>cn.qkmango.chat.filter.LoginFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+    <url-pattern>/chat.html</url-pattern>
+  </filter-mapping>
+
+
+  <servlet>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>cn.qkmango.chat.setting.web.controller.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/user/login.do</url-pattern>
+    <url-pattern>/user/queryLoginAct.do</url-pattern>
+    <url-pattern>/user/register.do</url-pattern>
+    <url-pattern>/user/logout.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ChatController</servlet-name>
+    <servlet-class>cn.qkmango.chat.chat.web.controller.ChatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChatController</servlet-name>
+    <url-pattern>/chat/getUserInfo.do</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
+
+
+

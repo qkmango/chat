@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="css/login.css"/> -->
+</head>
+<body class="layui-bg-green">
+
+
+<div class="layui-container layui-form layui-form-pane">
+  <div class="layui-row layui-form-item">
+    <div class="layui-bg-black" style="line-height: 100px;">
+		<label class="layui-form-label layui-bg-gray">注册账户</label>
+	</div>
+    <div class="layui-col-xs12 layui-col-md6 layui-bg-red" style="line-height: 100px;">
+		<div class="">
+		    <input type="text" name="loginAct" id="loginAct" lay-verify="required|loginAct" placeholder="请输入" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+    <div class="layui-bg-orange" style="line-height: 100px;">
+		<div class="layui-form-mid layui-word-aux">[5-10]位字母或数字组合，用来登陆</div>
+	</div>
+  </div>
+  
+  
+<!--  <div class="layui-form-item">
+      <label class="layui-form-label layui-bg-gray">注册账户</label>
+      <div class="layui-input-inline">
+          <input type="text" name="loginAct" id="loginAct" lay-verify="required|loginAct" placeholder="请输入" autocomplete="off" class="layui-input">
+      </div>
+      <div class="layui-form-mid layui-word-aux">[5-10]位字母或数字组合，用来登陆</div>
+  </div> -->
+  
+  
+</div>
+
+
+</body>
+</html>
+<script type="text/javascript" src="lib/jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="lib/layui/layui.js"></script>
+<script type="text/javascript" src="js/register.js"></script>

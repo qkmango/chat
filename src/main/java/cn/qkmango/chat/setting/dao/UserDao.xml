@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.qkmango.chat.setting.dao.UserDao">
+
+    <select id="login" resultType="cn.qkmango.chat.setting.domain.User">
+        select *
+        from tbl_user
+        where loginAct=#{loginAct} and loginPwd=#{loginPwd}
+    </select>
+
+    <select id="queryLoginAct" resultType="int">
+        select count(*)
+        from tbl_user
+        where loginAct=#{loginAct}
+    </select>
+
+    <insert id="register">
+        insert into tbl_user(id,loginAct,loginPwd,name)
+        values(
+            #{id},
+            #{loginAct},
+            #{loginPwd},
+            #{name}
+        )
+    </insert>
+
+</mapper>

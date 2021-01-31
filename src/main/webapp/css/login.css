@@ -1,0 +1,26 @@
+/* 顶部导航条logo */
+#top-nav img {
+	height: 40px;
+	margin-top: 10px;
+}
+
+div[type='dialog'] {
+	color: #000000;
+}
+
+.layui-main fieldset legend {
+	font-size: 50px;
+}
+
+#tip {
+	color: #d2d2d2;
+	display: inline-block;
+	margin-bottom: 20px;
+	padding: 5px;
+	transition: all 0.3s;
+}
+
+#tip:hover {
+	color: #009688;
+}
+

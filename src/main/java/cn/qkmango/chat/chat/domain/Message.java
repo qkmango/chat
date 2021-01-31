@@ -1,0 +1,50 @@
+package cn.qkmango.chat.chat.domain;
+
+/**
+ * @version 1.0
+ * @Description: //TODO
+ * <p>类简介</p>
+ * <p>类详细介绍</p>
+ * @className Message
+ * @author: Mango
+ * @date: 2021-01-30 16:18
+ */
+public class Message {
+
+    private String message;
+    private String dataTime;
+    private String userId;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDataTime() {
+        return dataTime;
+    }
+
+    public void setDataTime(String dataTime) {
+        this.dataTime = dataTime;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "message='" + message + '\'' +
+                ", dataTime='" + dataTime + '\'' +
+                ", userId='" + userId + '\'' +
+                '}';
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css"/>
+<link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body class="layui-main layui-bg-black">
+<!-- 顶部导航条 -->
+<nav id="top-nav">
+	<a href="http://qkmango.cn" target="_blank"><img src="imgs/logo_color.png" /></a>
+</nav>
+<fieldset class="layui-elem-field layui-field-title layui-bg-black" style="margin-top: 50px;">
+    <legend>注册</legend>
+</fieldset>
+<a href="login.html" id="tip"><i class="layui-icon">&#xe66f;</i>已有账户，去登陆</a>
+<form class="layui-form layui-form-pane">
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-bg-gray">注册账号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="loginAct" id="loginAct" lay-verify="required|loginAct" placeholder="请输入账号" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">[5-10]位字母或数字组合，用来登陆</div>
+    </div>
+	
+	
+	<div class="layui-form-item">
+	    <label class="layui-form-label layui-bg-gray">真实姓名</label>
+	    <div class="layui-input-inline">
+	        <input type="text" name="name" id="name" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+	    </div>
+	    <div class="layui-form-mid layui-word-aux">您真实的姓名或昵称</div>
+	</div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-bg-gray">账号密码</label>
+        <div class="layui-input-inline">
+            <input type="password" name="loginPwd" id="loginPwd" lay-verify="required|loginPwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">[5-10]位字母或数字组合，用来登陆</div>
+    </div>
+	
+	<div class="layui-form-item">
+	    <label class="layui-form-label layui-bg-gray">确认密码</label>
+	    <div class="layui-input-inline">
+	        <input type="password" name="checkPwd" id="checkPwd" lay-verify="required|loginPwd|checkPwd" placeholder="确认密码" autocomplete="off" class="layui-input">
+	    </div>
+	    <div class="layui-form-mid layui-word-aux">确认密码</div>
+	</div>
+	
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button type="button" class="layui-btn" lay-submit id="submit" lay-filter="formsubmit">立即注册</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
+<script type="text/javascript" src="lib/jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="lib/layui/layui.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
