@@ -2,9 +2,8 @@ package cn.qkmango.chat.chat.domain;
 
 /**
  * @version 1.0
- * @Description: //TODO
- * <p>类简介</p>
- * <p>类详细介绍</p>
+ * <p>Message，消息对象</p>
+ * <p>服务与客户端，发送一个消息就是一个Message对象</p>
  * @className Message
  * @author: Mango
  * @date: 2021-01-30 16:18

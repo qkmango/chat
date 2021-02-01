@@ -1,5 +1,8 @@
 package cn.qkmango.chat.setting.web.controller;
 
+import cn.qkmango.chat.chat.utils.WebSocketMapUtil;
+import cn.qkmango.chat.chat.utils.httpsesson.HttpSessionUtil;
+import cn.qkmango.chat.chat.web.controller.ChatWebSocket;
 import cn.qkmango.chat.setting.domain.User;
 import cn.qkmango.chat.setting.exception.LoginException;
 import cn.qkmango.chat.setting.exception.RegisterException;
@@ -14,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -49,7 +53,21 @@ public class UserController extends HttpServlet {
      * @param response
      */
     private void logout(HttpServletRequest request, HttpServletResponse response) {
-        request.getSession().invalidate();
+        HttpSession httpSession = request.getSession(false);
+
+        httpSession.invalidate();
+
+        for (HttpSession value : HttpSessionUtil.httpSessionMap.values()) {
+            System.out.println("HttpSession = " + value);
+        }
+
+        for (ChatWebSocket value : WebSocketMapUtil.webSocketMap.values()) {
+            System.out.println("ChatWebSocket = " + value);
+        }
+
+
+        System.out.println("logout invalidate");
+        // System.out.println("=====> httpSession = " + httpSession);
     }
 
     /**
@@ -115,21 +133,30 @@ public class UserController extends HttpServlet {
         user.setLoginPwd(loginPwd);
 
         UserService us = (UserService) ServiceFactory.getService(new UserServiceImpl());
+        // UserService us = new UserServiceImpl();
 
-        boolean flag = true;
+        boolean flag = false;
+        HashMap<String, Object> map = new HashMap<>();
 
         try {
             user = us.login(user);
+            flag = true;
+
+            map.put("success",flag);
+            map.put("user",user);
+
+            //如果用户没有登录过，则获取httpsession，并将其放入HttpSession列表中
+            if (request.getSession(false) == null) {
+                HttpSession httpSession = request.getSession(true);
+                httpSession.setAttribute("user",user);
+                HttpSessionUtil.httpSessionMap.put(user.getId(),httpSession);
+                System.out.println("=====> UserController.login 添加httpSession");
+                // System.out.println("=====> httpSession = " + httpSession);
+            }
+
         } catch (LoginException e) {
-            flag = false;
             e.printStackTrace();
         }
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("success",flag);
-        map.put("user",user);
-
-        request.getSession(true).setAttribute("user",user);
 
         PrintJson.printJsonObj(response,map);
     }

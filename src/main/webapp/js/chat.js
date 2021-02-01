@@ -26,6 +26,7 @@ $(function (){
 		url:"chat/getUserInfo.do",
 		type:"get",
 		dataType:"json",
+		async:false,
 		success:function (data) {
 			name = data.name;
 			id = data.id;
@@ -70,6 +71,7 @@ function logout() {
 		type:"get",
 		async:false,
 		success:function () {
+			alert()
 			window.location.href="login.html";
 		}
 	})

@@ -21,8 +21,8 @@ function connectWebSocket(){
         return;
     }
 
-    // 打开一个 web socket
-    websocket = new WebSocket("ws://localhost:80/chat/websocket");
+    // 打开一个 webSocket
+    websocket = new WebSocket("ws://127.0.0.1:80/chat/websocket/"+id);
     websocket.onopen = function() {
         // Web Socket 已连接上，使用 send() 方法发送数据
         console.log("connectWebSocket.websocket.onopen =>> 已连接");

@@ -6,8 +6,13 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 
+<!--  <listener>-->
+<!--    <listener-class>cn.qkmango.chat.chat.web.listener.RequestListener</listener-class>-->
+<!--  </listener>-->
+
+<!--  HttpSession监听器-->
   <listener>
-    <listener-class>cn.qkmango.chat.chat.web.listener.RequestListener</listener-class>
+    <listener-class>cn.qkmango.chat.chat.web.listener.OnlineUserHttpSessionListener</listener-class>
   </listener>
 
   <!-- 乱码过滤器 -->
