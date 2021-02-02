@@ -78,6 +78,8 @@ function receiveMessage(responseData) {
         }
      */
 
+    console.log(responseData);
+
     var jsonObj = eval('(' + responseData + ')');
 
     //如果是系统消息

@@ -92,6 +92,7 @@ html,body {
 	background-color: #fff;
 	padding: 8px 10px;
 	border-radius: 5px;
+	text-align: left;
 }
 #chat-left .message-me>.message-msg>span {
 	background-color: #5FB878;

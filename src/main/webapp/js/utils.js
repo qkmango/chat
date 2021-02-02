@@ -19,3 +19,13 @@ function getCurrentDateTime() {
 
     return time;
 }
+
+/**
+ * 替换换行，将字符串换行符替换为 <br>
+ */
+function replaceBr(text) {
+	text = text.replace(/\r\n/g,"<br>")
+	text = text.replace(/\n/g,"<br>");
+	// console.log(text);
+	return text;
+}

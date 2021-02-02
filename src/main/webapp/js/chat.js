@@ -50,6 +50,9 @@ $(function (){
             "dateTime":connectWebSocket()
         }
          */
+		
+		message = replaceBr(message);
+		
 		var sendMessage = "{'isSysMsg':false,'name':'"+name+"','id':'"+id+"','message':'"+message+"','dateTime':'"+getCurrentDateTime()+"'}"
 		console.log(sendMessage)
 		sendWebSocket(sendMessage);
